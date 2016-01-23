@@ -1,10 +1,18 @@
-var app = angular.module('AddressBook', []);
-
-app.controller('LiCtrl', function($scope) {
-    
-    $http.get('http://cdn.bemyapp.com/files/2016/one-point/fixtures/challenge-full-stack/addressBook.json')
-       .then(function(res){
-          $scope.addresses = res.data;
-        });
-    
-});
+angular.module('AddressBook')
+    .module('app', [
+    'ui.router',
+    'lbServices'])
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+         /*   .state('clients', {
+                url: '/clients',
+                templateUrl: 'views/clients.html',
+                controller: 'ClientsController'
+            })*/
+            .state('import', {
+            url:' /import',
+            templateUrl: 'import.html',
+            controller: 'ImportController'
+        })
+        $urlRouterProvider.otherwise('/');
+    }])
