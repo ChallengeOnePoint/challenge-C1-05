@@ -20,7 +20,7 @@ angular
     .controller('LiCtrl', function ($scope, Address) {
 
         Address.find().$promise.then(function (results) {
-            $scope.addresses = results;
+            $scope.addresses = results.data;
         });
 
         $scope.setCurrent = function (x) {
