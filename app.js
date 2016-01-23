@@ -7,4 +7,8 @@ app.controller('LiCtrl', function($scope, $http) {
           $scope.addresses = res.data;
         });
     
+    $scope.setCurrent = function(x) {
+          $scope.current = x;
+    };
+    
 });

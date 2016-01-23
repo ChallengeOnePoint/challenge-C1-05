@@ -24,8 +24,32 @@
     </head>
     
     <body ng-app="AddressBook" ng-controller="LiCtrl">
-        <div class="list-group" ng-repeat="elem in addresses">
-            <a href="#" class="list-group-item">{{addresses}}</a>
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="list-group">
+                    <a href="#"
+                       ng-repeat="elem in addresses | orderBy:'-name'"
+                       class="list-group-item"
+                       ng-class="{'active': elem==current}" 
+                       ng-click="setCurrent(elem)">
+                        {{elem.lastname}} {{elem.firstname}}
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-9">
+                <div class="panel panel-default floating">
+                    <div class="panel-heading">Name</div>
+                    <div class="panel-body">{{current.firstname + ' ' + current.lastname}}</div>
+                </div>
+                <div class="panel panel-default floating">
+                    <div class="panel-heading">Panel Heading</div>
+                    <div class="panel-body">Panel Content</div>
+                </div>
+                <div class="panel panel-default floating">
+                    <div class="panel-heading">Panel Heading</div>
+                    <div class="panel-body">Panel Content</div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
