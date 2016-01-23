@@ -1,5 +1,6 @@
-angular.module('AddressBook')
+angular
     .module('app', [
+    'ng',
     'ui.router',
     'lbServices'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
