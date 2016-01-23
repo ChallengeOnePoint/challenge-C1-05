@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular
     .module('app', [
     'ng',
@@ -6,31 +5,26 @@ angular
     'lbServices'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-         /*   .state('clients', {
-                url: '/clients',
-                templateUrl: 'views/clients.html',
-                controller: 'ClientsController'
-            })*/
+        /*   .state('clients', {
+               url: '/clients',
+               templateUrl: 'views/clients.html',
+               controller: 'ClientsController'
+           })*/
             .state('import', {
-            url:' /import',
+            url: ' /import',
             templateUrl: 'import.html',
             controller: 'ImportController'
         })
         $urlRouterProvider.otherwise('/');
     }])
-=======
-var app = angular.module('AddressBook', []);
+    .controller('LiCtrl', function ($scope, Address) {
 
-app.controller('LiCtrl', function($scope, $http) {
-    
-    $http.get('addresses.json')
-       .then(function(res){
-          $scope.addresses = res.data;
+        Address.find().$promise.then(function (results) {
+            $scope.addresses = results;
         });
-    
-    $scope.setCurrent = function(x) {
-          $scope.current = x;
-    };
-    
-});
->>>>>>> master
+
+        $scope.setCurrent = function (x) {
+            $scope.current = x;
+        };
+
+    });
