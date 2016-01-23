@@ -7,7 +7,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.5.0-rc.1/angular-resource.min.js"></script>
         <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="services.js"></script>
         <script src="app.js"></script>
         
         <title>AddressBook: Xavier Niel</title>
@@ -19,7 +22,7 @@
         </nav>
     </head>
     
-    <body ng-app="AddressBook">
+    <body ng-app="AddressBook" ng-controller="LiCtrl">
         <div class="list-group" ng-repeat="elem in addresses">
             <a href="#" class="list-group-item">{{addresses}}</a>
         </div>
