@@ -1,6 +1,6 @@
 (function(window, angular, undefined) {'use strict';
 
-var urlBase = "/api";
+var urlBase = "http://51.254.203.22:3000/api";
 var authHeader = 'authorization';
 
 /**
